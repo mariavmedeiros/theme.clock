@@ -5,7 +5,15 @@ const timeEl = document.querySelector(".time");
 const dateEl = document.querySelector(".date");
 const toggle = document.querySelector(".toggle");
 
-const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 const months = [
   "Jan",
   "Feb",
@@ -71,7 +79,7 @@ function setTime() {
     minutes < 10 ? `0${minutes}` : minutes
   } ${ampm}`;
 
-  dateEl = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
+  dateEl.innerHTML = `${days[day]}, ${months[month]} <span class="circle">${date}</span>`;
 }
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
